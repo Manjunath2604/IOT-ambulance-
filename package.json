@@ -1,0 +1,24 @@
+{
+  "version": "0.0.1",
+  "description": "my first socket.io app",
+  "dependencies": {
+    "bolt-iot-wrapper": "^1.2.0",
+    "express": "^4.17.1",
+    "johnny-five": "^2.1.0",
+    "nanoid": "^3.2.0",
+    "nikki.node": "^1.0.0",
+    "nodemon": "^2.0.22",
+    "rxjs": "^7.5.2",
+    "socket.io": "^4.1.2",
+    "socketio": "^1.0.0",
+    "tslib": "^2.4.0",
+    "ws": "^8.4.2"
+  },
+  "author": "Anupkumar HM",
+  "devDependencies": {
+    "@types/node": "^17.0.18"
+  },
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}

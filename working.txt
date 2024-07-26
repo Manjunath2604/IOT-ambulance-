@@ -1,0 +1,110 @@
+
+
+// OPTIONAL : load the microcontroller board...
+function preload() {
+    // use loadBoard() to start the microcontroller board.
+    loadBoard();
+}
+
+
+var recentValue = 0
+
+// OPTIONAL : initialize any setup required to before starting the execution.
+function setup() {
+
+ const sensor = new five.Sensor("A0")
+
+  sensor.on("change", function () {
+  recentValue =  this.value
+  })
+
+  setInterval(() => {
+
+            console.log("sending  ", recentValue);
+            let data = { sensorData: recentValue };
+            // using sendData() function to send data to connected nodes.
+	        sendData(data);
+        }, 1000);
+
+    
+}
+
+// OPTIONAL  : draw on HTML canvas.
+function draw() {
+}
+
+
+
+
+// OPTIONAL : use sendData () function to sends data to connected nodes..
+//            accepts json object.
+//            sendData(jsonData)
+
+
+// OPTIONAL : is called whenever nodes receives any data from other connected nodes.
+function onData(data) {
+    console.info("got input data ", data);
+}
+
+
+
+// OPTIONAL : input data type of your service.
+function getInputDataType() {
+     // for this example no input is expected.	
+     return {
+          
+    }
+}
+
+// OPTIONAL : return data type of your service.
+function getOutputDataType() {
+ // in this example as we are sending count data
+ // output data type will look like below , here 1 is default value.
+    let rObj = {   
+         count : 1 
+    }
+   return rObj ;
+}
+
+// OPTIONAL : this name is used for mapping your service in playground.
+function getDisplayName() {
+    return "microController service"
+}
+
+
+// OPTIONAL : short discription about the output datatype.
+function getOutputDataDescription() {
+// since we are sending msg count value every 3 second. let's describe it as msg counter
+    let desc = "msg counter"
+    return desc;
+}
+
+// OPTIONAL : short discription about the intput datatype.
+function getInputDataDescription() {
+    return "no input expected."
+}
+
+// even callback.
+// OPTIONAL : is called when service is connect to server.
+function onConnected() {
+    console.info("service connected");
+}
+
+// even callback.
+// OPTIONAL : is called when service is dis-connect from server.
+function onDisconnected() {
+    console.info("service disconnected");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

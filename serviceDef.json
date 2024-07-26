@@ -1,0 +1,12 @@
+{
+  "srvID": "7OfpN3qdS6GimVUt6eVKm",
+  "instID": "FJQ0GBqxy0sF06MUjVST6",
+  "proglang": "NODEJS",
+  "iDf": { "ioType": "voidType", "name": "", "data": {}, "desc": "" },
+  "oDf": { "ioType": "voidType", "name": "", "data": {}, "desc": "" },
+  "name": "ANUP",
+  "dispName": "ANUP",
+  "desc": "",
+  "tags": [],
+  "startType": "manual"
+}
